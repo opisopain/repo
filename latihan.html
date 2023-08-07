@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/latihan.css" />
+    <title>Form Valiidation</title>
+  </head>
+  <body>
+    <form action="" method="post" autocomplete="off" required>
+      <div>
+        <label for="nama">Masukan nama:</label>
+        <input type="text" name="nama" id="nama" autofocus maxlength="4" required oninvalid="this.setCustomValidity('ini harus di isi')" oninput="this.setCustomValidity('')" />
+      </div>
+      <div>
+        <label for="email">Masukan email:</label>
+        <input type="email" name="email" id="email" />
+      </div>
+      <div>
+        <label for="nohp">Masukan No HP:</label>
+        <input type="tel" name="nohp" id="nohp" />
+      </div>
+      <div>
+        <label for="website">Masukan Website Anda:</label>
+        <input type="url" name="website" id="website" />
+      </div>
+      <div>
+        <label for="number">Masukan angka:</label>
+        <input type="number" name="number" id="number" />
+      </div>
+
+      <div>
+        <label for="tanggal">Masukan tanggal:</label>
+        <input type="date" name="tanggal" id="tanggal" />
+      </div>
+      <div>
+        <label for="warna">Masukan warna:</label>
+        <input type="color" name="warna" id="warna" />
+        <span class="hexa"></span>
+      </div>
+
+      <div>
+        <label for="kodepos">Masukan kodepos:</label>
+        <input type="text" name="kodepos" id="kodepos" pattern="^([1-9])[0-9]{4}$" />
+      </div>
+
+      <div>
+        <label for="slider">Masukan angka:</label>
+        <span class="awal"></span>
+        <input type="range" name="slider" id="slider" min="0" max="100" step="5" />
+        <span class="akhir"></span>
+      </div>
+
+      <div>
+        <button type="submit">Kirim</button>
+      </div>
+    </form>
+
+    <script>
+      const slider = document.querySelector("#slider");
+      const awal = document.querySelector(".awal");
+      const akhir = document.querySelector(".akhir");
+
+      awal.innerHTML = slider.min;
+      akhir.innerHTML = slider.value;
+
+      slider.addEventListener("input", function () {
+        akhir.innerHTML = slider.value;
+      });
+
+      const warna = document.querySelector("#warna");
+      const hexa = document.querySelector(".hexa");
+      const bg = document.querySelector("body");
+
+      hexa.innerHTML = warna.value;
+
+      warna.addEventListener("change", function () {
+        hexa.innerHTML = warna.value;
+        hexa.style.color = warna.value;
+        bg.style.backgroundColor = warna.value;
+      });
+    </script>
+  </body>
+</html>

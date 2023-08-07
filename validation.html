@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wght@300;400;500;600;700&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        min-height: 100vh;
+      }
+
+      .centering-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* logo */
+      .logo {
+        display: flex;
+        align-items: center;
+        padding: 1.5em 5%;
+        /* border: 1px solid red; */
+        gap: 0.5rem;
+      }
+
+      .logo h2 {
+        color: #080a29;
+        font-size: 2.7 rem;
+      }
+
+      .logo img {
+        height: 50px;
+      }
+
+      /* hero */
+      main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* border: 1px solid red; */
+        min-height: calc(80vh - 2rem);
+        padding-inline: 5%;
+      }
+
+      /* hero text */
+
+      .hero-txt {
+        width: 50vw;
+        /* border: 1px solid red; */
+      }
+
+      .hero-txt h1 {
+        font-size: 4.5em;
+        margin-bottom: 1rem;
+      }
+
+      .hero-txt p {
+        font-size: 1.5em;
+      }
+
+      /* hero form */
+      .card {
+        height: 450px;
+        width: 35vw;
+        gap: 1rem;
+        box-shadow: -1px 1px 5px #5a5a5a;
+        border-radius: 5%;
+      }
+
+      .hero-txt span {
+        color: red;
+      }
+
+      .form {
+        gap: 1rem;
+      }
+
+      button {
+        padding: 0.8rem 1.7rem;
+        border: 3px solid transparent;
+        background-color: #080a29;
+        color: white;
+        font-size: 1em;
+        font-weight: 700;
+        border-radius: 10px;
+        transition: 0.5s;
+        margin-top: 2rem;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background-color: transparent;
+        color: #080a29;
+        border: 3px solid #080a29;
+      }
+
+      .form label {
+        font-size: 1.5em;
+      }
+
+      .form input {
+        height: 40px;
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1.2em;
+      }
+
+      @media (max-width: 1366px) {
+        html {
+          font-size: 90%;
+        }
+      }
+      @media (max-width: 912px) {
+        html {
+          font-size: 80%;
+        }
+        main {
+          flex-direction: column;
+          gap: 2em;
+        }
+
+        .hero-txt {
+          text-align: center;
+          width: 90%;
+        }
+
+        .card {
+          width: 70%;
+        }
+      }
+      @media (max-width: 768px) {
+        html {
+          font-size: 75%;
+        }
+      }
+      @media (max-width: 450px) {
+        html {
+          font-size: 55%;
+        }
+
+        .card {
+          height: 300px;
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="/img/circle-g.jpg" alt="logo" />
+        <h2>Physics</h2>
+      </div>
+    </header>
+    <main>
+      <div class="hero-txt">
+        <h1>The Best Way To Learn <span>Physics</span></h1>
+        <p>Guided Interactive problem solving that's effective and fun. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, omnis.</p>
+      </div>
+
+      <form action="bridging.html" methode="post" autocomplete="off" class="card centering-col">
+        <div class="form centering-col">
+          <label for="username">Masukan Username:</label>
+          <input type="text" name="username" id="username" />
+        </div>
+        <div class="form centering-col">
+          <label for="password">Masukan Password:</label>
+          <input type="password" name="password" id="password" />
+        </div>
+        <button type="submit" onclick="validateLogin()">Get Started</button>
+      </form>
+    </main>
+
+    <script>
+      function validateLogin() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        const correctUsername = "1";
+        const correctPassword = "1";
+
+        if (username === correctUsername && password === correctPassword) {
+          window.location.href = "PG.html";
+        } else {
+          alert("Username atau password salah!");
+        }
+      }
+    </script>
+  </body>
+</html>

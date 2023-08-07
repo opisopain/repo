@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vocabulary Quiz</title>
+  <link rel="stylesheet" href="/css/kuis.css">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+   <!-- Navbar start -->
+   <header>
+    <nav class="navbar" data-aos="fade-down"  data-aos-delay="50" data-aos-duration="1200">
+      <a href="#" class="logo"><span>MY</span>Portofolio_</a>
+      <div class="menuToggle"></div>
+      <ul class="navbar-nav">
+        <li class="active"><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#portopolio">Portofolio</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Navbar end -->
+
+  <div class="container">
+    <h1>Vocabulary Quiz</h1>
+  
+    <!-- tampilan awal -->
+    <div id="start-container">
+      <p>Click the button below to start the quiz.</p>
+      <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+     <!-- tampilan soal-->
+    <div id="question-container" style="display: none;">
+      <p id="question">Translate the word:</p>
+      <input type="text" id="answer" placeholder="Your answer">
+      <button onclick="checkAnswer()">Submit</button>
+      <p id="result"></p>
+      <p id="score">Score: 0</p>
+      <p id="timer">Time left: 1:00</p>
+    </div>
+
+    <div id="score-container" style="display: none;">
+      <p>Your Final Score: <span id="final-score"></span></p>
+      <button onclick="restartQuiz()">Restart Quiz</button>
+    </div>
+  </div>
+
+  <script src="/js/kuis.js"></script>
+</body>
+</html>

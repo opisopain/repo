@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  background-color: #fff;
+  gap: 2em;
+}
+
+.centering-qs {
+  width: 100%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.PG {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.PG .question-cnt,
+.PG .answer-card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.5s ease-in-out;
+  padding: 1em;
+}
+
+.PG .question-cnt {
+  transform: rotateY(0deg);
+}
+
+.PG .answer-card {
+  transform: rotateY(180deg);
+}
+
+/* animasi flip */
+
+.PG.flipped .question-cnt {
+  transform: rotateY(-180deg);
+}
+
+.PG.flipped .answer-card {
+  transform: rotateY(0deg);
+}
+/* flip  end*/
+
+.answer-card.active {
+  display: block;
+}
+
+.question {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.options label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.feedback {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.feedback.flipped i {
+  color: #fff;
+}
+
+.feedback p {
+  font-weight: bold;
+  position: relative;
+}
+
+.benar,
+.salah {
+  position: relative;
+  top: 3px;
+  display: inline-block;
+  left: 5px;
+  font-size: 1.5em;
+  transition: 0.6s;
+}
+
+.benar {
+  color: green;
+}
+
+.salah {
+  color: red;
+}
+
+.submitBtn,
+.showAnswerBtn,
+.closeExplanationBtn {
+  background-color: #007bff;
+  border: 2px solid transparent;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-right: 20px;
+}
+
+.submitBtn:hover,
+.showAnswerBtn:hover,
+.closeExplanationBtn:hover {
+  border: 1px solid #007bff;
+  background-color: transparent;
+  color: #007bff;
+}
+
+.overflow {
+  padding-block: 20px;
+  overflow: auto;
+  height: 100%;
+}
